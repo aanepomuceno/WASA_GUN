@@ -11,7 +11,9 @@ Observations
     5. You will need to convert your input MCPL file to text file
     
  A. Prepare input file
-    1. First, you need to convet your MCPL file to a ASCII using MCPL tools, available on https://mctools.github.io/mcpl/. For installation, it is recommended to use conda:
+ 
+    1. First, you need to convet your MCPL file to a ASCII using MCPL tools, available on https://mctools.github.io/mcpl/. 
+       For installation, it is recommended to use conda:
        $ conda install -c conda-forge mcpl
     
     2. Once installed, you can dump the content of the MCPL file using pymcpltool. Example:
