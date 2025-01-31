@@ -21,7 +21,7 @@ Observations
     
     3. The last column of the hibeam_wasa_mc.dat file is the event number, in hexadecimal format. 
     
-    5. Edit your *.dat file to remove the head (all lines with file and columns information). The file must have only numbers. 
+    4. Edit your *.dat file to remove the head (all lines with file and columns information). The file must have only numbers. 
     
     5. Put your text file name in the code WASA_FAST/src/WASAPrimaryGeneratorAction.cc (around line 52).
     
