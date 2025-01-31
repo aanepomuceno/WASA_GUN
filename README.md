@@ -6,8 +6,8 @@ Observations
 
     1. You need Geant4 version 4.11 and ROOT 6.x to run this application
     2. At the moment, only the electromagnetic calorimeter response is implemented (for electrons, photons, pions and protons)
-    3. The source files are located in WASA_FAST/src directory
-    4. The head files are located in WASA_FAST/include directory
+    3. The source files are located in WASA_Fast_Gun/src directory
+    4. The head files are located in WASA_Fast_Gun/include directory
     5. You will need to convert your input MCPL file to text file
     
  A. Prepare input file
