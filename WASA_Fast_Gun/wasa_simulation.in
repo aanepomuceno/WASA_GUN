@@ -1,0 +1,14 @@
+#
+#/tracking/verbose 2
+#
+#/globalField/setValue 0 0 0 tesla
+#/globalField/verbose 1
+#/tracking/verbose 1
+
+/globalField/setValue 0 0 0 tesla
+/globalField/verbose 1
+/run/beamOn 100
+
+#
+exit
+
