@@ -23,7 +23,7 @@ Observations
     
     4. Edit your *.dat file to remove the head (all lines with file and columns information). The file must have only numbers. 
     
-    5. Put your text file name in the code WASA_FAST/src/WASAPrimaryGeneratorAction.cc (around line 52).
+    5. Put your text file name in the code WASA_Fast_Gun/src/WASAPrimaryGeneratorAction.cc (around line 52).
     
 B. HOW TO COMPILE
 
