@@ -51,6 +51,8 @@ B. HOW TO COMPILE
     3. Run a simulation:
       $./wasa_main wasa_simulation.in
    
-    The output of the simulation (energy recorded in the EM calorimeter and hit position) will be store in four ROOT file WASAFastOutput_t*.root. Reco energy is stotred in the variable emcal_E. It possible to check truth information in emcal_PDG and emcal_ETruth.
+    The output of the simulation (energy recorded in the EM calorimeter and hit position) will be store in the 
+    ROOT file WASAFastOutput_t*.root. Reco energy is storted in the variable emcal_E. 
+    It possible to check truth information in emcal_PDG and emcal_ETruth.
     
     
