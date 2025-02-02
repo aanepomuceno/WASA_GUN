@@ -49,6 +49,7 @@ void signal_analysis(){
      
      npions_plus = 0;
      npions_minus = 0;
+     nphotons = 0;
      v1.Clear();
      v2.Clear();
      v.clear();
