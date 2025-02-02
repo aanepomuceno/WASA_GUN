@@ -61,7 +61,7 @@ int main( int argc, char** argv ) {
   // Initialization of Run manager
   //-------------------------------
   auto* runManager = G4RunManagerFactory::CreateRunManager();
-  runManager->SetNumberOfThreads(1);
+  runManager->SetNumberOfThreads(4);
 
   // Detector/mass geometry:
   G4VUserDetectorConstruction* detector = new WASADetectorConstruction();
