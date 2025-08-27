@@ -1,0 +1,7 @@
+
+The code was modified to read files with signal our backgroud events
+The input file are .dat file created from MCPL file
+
+1. The codes WASAPrimaryGeneratorAction.hh and WASAPrimaryGeneratorAction.cc were modified to read the input file.
+2. The codes WASAPrimaryGeneratorMessenger.hh and WASAPrimaryGeneratorMessenger.cc were *created* to o handle the input /gun/setInputFile from the macro
+3. This version of the code also has the optimized output from WASA_Fast_V2

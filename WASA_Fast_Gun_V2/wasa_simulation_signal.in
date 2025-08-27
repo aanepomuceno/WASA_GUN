@@ -1,0 +1,16 @@
+#
+#/tracking/verbose 2
+#
+#/globalField/setValue 0 0 0 tesla
+#/globalField/verbose 1
+#/tracking/verbose 1
+
+#flag setFileType: set 1 for signal file, and 0 for bkg file
+/globalField/setValue 0 0 0 tesla
+/globalField/verbose 1
+/gun/setInputFile input_files/cosmic_muon_5.dat
+/gun/setFileType 0  
+/run/beamOn 22825
+#
+exit
+

@@ -1,0 +1,25 @@
+#ifndef WASAPRIMARYGENERATORMESSENGER_HH
+#define WASAPRIMARYGENERATORMESSENGER_HH
+
+#include "G4UImessenger.hh"
+#include "globals.hh"
+#include "G4UIcmdWithAString.hh"
+#include "G4UIcmdWithAnInteger.hh"
+
+class WASAPrimaryGeneratorAction;
+
+class WASAPrimaryGeneratorMessenger : public G4UImessenger {
+public:
+    WASAPrimaryGeneratorMessenger(WASAPrimaryGeneratorAction* generator);
+    ~WASAPrimaryGeneratorMessenger() override;
+
+    void SetNewValue(G4UIcommand* command, G4String newValue) override;
+
+private:
+    WASAPrimaryGeneratorAction* fGenerator;
+    G4UIcmdWithAString* fSetFileCmd;
+    G4UIcmdWithAnInteger* fSetFileTypeCmd;
+};
+
+#endif
+
