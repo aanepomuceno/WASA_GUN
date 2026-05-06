@@ -1,0 +1,24 @@
+
+Date: 13/04/2026
+Andre Nepomuceno
+
+This version (V3) of the WASA Fast GUN is based on WASA_Fast_V4. The SEC geometry is read from a GDML (same as in version WASA_Fast_V3), and the TPC is included in WASADetectorConstruction.
+The followig codes were transfered from WASA_Fast_Gun_V2 to this version:
+
++ WASAPrimaryGeneratorAction (cc and hh)
++ WASAPrimaryGeneratorMessenger (cc and hh)
+
+Important note:
+The cut on KE in WASAFastSimModelTracke.cc was alteread to 1 MeV (to avoide crash when Ion energies were too low):
+   G4double KE = aFastTrack.GetPrimaryTrack()->GetKineticEnergy()/MeV;
+   if (KE < 1.0 ) {
+     aFastStep.KillPrimaryTrack();
+     return;
+   }
+
+The file CMakeLists.txt from WASA_Fast_V4 was altered to copy to the build directory the following files:
+filtered_barrel.gdml wasa_simulation_signal.in vis_wasa.mac verify_output.C
+
+
+
+
