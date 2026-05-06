@@ -1,23 +1,23 @@
 WASA Fast Simulation with MCPL Input File \
-Andre Nepomuceno - August 2025
+Andre Nepomuceno - May 2026
 
 Observations
 
     1. You need Geant4 version 4.11 and ROOT 6.x to run this application
-    2. At the moment, only the electromagnetic calorimeter response is implemented (for electrons, photons, pions and protons)
-    3. The source files are located in WASA_Fast_Gun_V2/src directory
-    4. The head files are located in WASA_Fast_Gun_V2/include directory
+    2. This version of the code includes the WASA SEC Calorimeter and an TPC.
+    3. The source files are located in WASA_Fast_Gun_V3/src directory
+    4. The head files are located in WASA_Fast_Gun_V3/include directory
     5. You will need to convert your input MCPL file to a dat file (more below)
     6. You will also need MCPL tools, available at https://mctools.github.io/mcpl/
     
 A. Compilation
 
-    1. Copy the entire directory WASA_Fast_Gun_V2 to some location. For example, let us say that this location is /home/you/.
-    In the /home/you/ directory, alongside WASA_Fast_Gun_V2 folder, create the folder WASA-build:
+    1. Copy the entire directory WASA_Fast_Gun_V3 to some location. For example, let us say that this location is /home/you/.
+    In the /home/you/ directory, alongside WASA_Fast_Gun_V3 folder, create the folder WASA-build:
 
     $ mkdir WASA-build 
     $ ls 
-      WASA-build WASA_Fast_Gun_V2
+      WASA-build WASA_Fast_Gun_V3
 
     2. Inside the folder WASA-build, run CMake:
 
@@ -37,15 +37,15 @@ A. Compilation
     
         $ conda install -c conda-forge mcpl
         
-    2. Copy the folder WASA_Fast_Gun_V2/input_files to WASA-build:
+    2. Copy the folder WASA_Fast_Gun_V3/input_files to WASA-build:
     
        $ cp -r /home/you/WASA_Fast_Gun_V2/input_files/ /home/you/WASA-build
        $ cd input_files/
        
        Inside this folder, you will find the script mcpl_to_dat_1F.sh, to convert the a MCPL file to a ASCII file.
-       Edit the first two lines of this script with the names of your input MCPL file and the desired .dat file name. 
+       Edit the first two lines of this script with the names of your input MCPL file and the desired .dat output file name. 
    
-    3. Copy your MCPL file (or files) to WASA_Fast_Gun_V2/input_files/, or put the full MCPL file path in the script  
+    3. Copy your MCPL file (or files) to WASA_Fast_Gun_V3/input_files/, or put the full MCPL file path in the script  
  
     4. Run the script mcpl_to_dat_1F.sh. Besides converting the MCPL file to a .dat file, it will create the macro wasa_simulation_1.in in the WASA-build folder
     
@@ -59,9 +59,9 @@ A. Compilation
     
       $ ./wasa_main wasa_simulation_1.in
       
-     The output of the simulation (energy recorded in the EM calorimeter and hit position) will be store in the 
-     ROOT file WASAFastOutput_t0.root. The file has the two folders: MC, where the truth information is stored, and EMCAL, with the calorimeter responses. 
-     Reconstructed energy is stotred in the variable emcal_E. It is possible to check truth information in emcal_PDG and emcal_ETruth.
+     The output of the simulation (energy recorded in the EM calorimeter,hit position, dE/dx from the TPC) will be store in the 
+     ROOT file WASAFastOutput_t0.root. The file has the three folders: MC, where the truth information is stored, Tracker, with dE/dx, and EMCAL, with the calorimeter responses.
+     Reconstructed energy is stotred in the variable emcal_E. tracker_XDir (also YDir, ZDir), are the particle direction, calculated as the diference between the entry and exit points in the TPC.
     
     2. You can use the macro verify_output.C to check the integrity of the ROOT output file. It will print informations on the first three events.
     
